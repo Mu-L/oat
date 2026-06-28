@@ -18,7 +18,7 @@ Wrap in `<ot-dropdown>`. Use `popovertarget` on the trigger and `popover` on the
   </button>
   <menu popover id="demo-menu">
     <button role="menuitem" class="ghost">Profile</button>
-    <button role="menuitem" class="ghost">Settings</button>
+    <button role="menuitem" class="ghost" popovertarget="demo-menu" popovertargetaction="hide">Click to close</button>
     <button role="menuitem" class="ghost">Help</button>
     <a href="#" role="menuitem" class="unstyled">Link</a>
     <hr>
