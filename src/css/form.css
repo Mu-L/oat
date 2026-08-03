@@ -198,7 +198,6 @@
     align-items: stretch;
     border: none;
     padding: 0;
-    margin: 0;
 
     & > :is(input, textarea, select) {
       flex: 1;
