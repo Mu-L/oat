@@ -8,10 +8,12 @@
  *
  * Attributes:
  *   value              - comma-separated initial tags
+ *   disabled           - disables input like a native <input>
  *
  * Properties:
  *   .value             - read/write array of tags. Each tag is a string, or an
  *                        object whose toString() returns its display text.
+ *   .disabled          - read/write boolean for the `disabled` attrib.
  *
  * Events:
  *   input              - dispatched (bubbles) when a tag is added or removed.
@@ -26,6 +28,8 @@ const h = t => document.createElement(t);
 const label = v => String(v).trim();
 
 class OtTaginput extends OtBase {
+  static observedAttributes = ['disabled'];
+
   // Maps a tag's badge element to its backing object (only set for object tags).
   #data = new WeakMap();
 
@@ -57,6 +61,22 @@ class OtTaginput extends OtBase {
 
     const val = this.getAttribute('value');
     if (val) this.value = [val];
+
+    this.attributeChangedCallback();
+  }
+
+  attributeChangedCallback() {
+    if (this.input) this.input.disabled = this.disabled;
+    this.setAttribute('aria-disabled', this.disabled);
+  }
+
+
+  get disabled() {
+    return this.hasAttribute('disabled');
+  }
+
+  set disabled(v) {
+    this.toggleAttribute('disabled', !!v);
   }
 
   // Enter / command triggers tag addition, backspace removes the last tag.

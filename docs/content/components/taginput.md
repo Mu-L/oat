@@ -14,6 +14,10 @@ Use `<ot-taginput>`. Type a word and press <kbd>Enter</kbd> or <kbd>,</kbd> (com
 <ot-taginput value="apple, mango">
   <input placeholder="Add tags ..." maxlength="15" />
 </ot-taginput>
+
+<ot-taginput value="apple, mango" disabled>
+  <input placeholder="Disabled taginput ..." maxlength="15" />
+</ot-taginput>
 ```
 {% end %}
 
@@ -84,10 +88,12 @@ Mutate the `value` property of the component. A standard `input` event is dispat
 
 ### Options
 
-| Property      | Description                                                                     |
-| ------------- | ------------------------------------------------------------------------------- |
-| `<input>`     | Child input field where the user types                                          |
-| `value`       | Comma-separated list of initial tags.                                           |
-| `.value`      | Array of tags (strings or objects). Setting this does not emit `input`.         |
-| `option.data` | Optional object attached to a `<datalist>` `<option>`. |
-| `input` event | Dispatched (bubbles) on add/remove. `detail` is the current tag array.          |
+| Property      | Description                                                             |
+| ------------- | ----------------------------------------------------------------------- |
+| `<input>`     | Child input field where the user types                                  |
+| `value`       | Comma-separated list of initial tags.                                   |
+| `disabled`    | Disables the control like a native `<input>`.                           |
+| `.value`      | Array of tags (strings or objects). Setting this does not emit `input`. |
+| `.disabled`   | Boolean prop for the `disabled` attribute.                              |
+| `option.data` | Optional object attached to a `<datalist>` `<option>`.                  |
+| `input` event | Dispatched (bubbles) on add/remove. `detail` is the current tag array.  |

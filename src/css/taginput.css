@@ -18,6 +18,15 @@
       box-shadow: 0 0 0 2px rgb(from var(--ring) r g b / 0.2);
     }
 
+    &[aria-disabled="true"] {
+      cursor: not-allowed;
+
+      .badge button {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
     /* Strip the inherited input chrome; it's just a bare typing field. */
     input {
       flex: 1;
