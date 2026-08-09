@@ -108,6 +108,8 @@ class OtTaginput extends OtBase {
 
   // Click a tag's 'x' to remove it.
   onclick(e) {
+    if (this.disabled) return;
+
     const x = e.target.closest('button');
     x ? this.remove(x.parentElement) : this.input.focus();
   }
