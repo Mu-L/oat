@@ -127,4 +127,4 @@ After these, include CSS and JS files the respective components.
 
 ## Dark mode
 
-Dark mode is applied automatically via `light-dark()` and `color-scheme: light dark`, following the OS system preference. To customize the dark theme, redefine the theme variables scoped inside a `[data-theme="dark"]` selector in your own CSS, and set `data-theme="dark"` on `<body>` to activate it manually.
+Dark mode is applied automatically via `light-dark()` and `color-scheme: light dark`, following the OS system preference. To customize the dark theme, redefine the theme variables scoped inside a `[data-theme="dark"]` selector in your own CSS. To forcibly set a theme, `document.body.style.colorScheme = 'dark|light'`.
