@@ -59,4 +59,8 @@
   details > *:not(summary) {
     margin: var(--space-4);
   }
+
+  details[open] > *:not(summary) {
+    animation: fade-in-up 0.3s both;
+  }
 }

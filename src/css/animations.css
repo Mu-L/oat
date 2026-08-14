@@ -19,4 +19,16 @@
       opacity: 0;
     }
   }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0.6;
+      transform: translateY(2px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

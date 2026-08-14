@@ -39,5 +39,9 @@
     &:focus-visible {
       outline: none;
     }
+
+    &:not([hidden]) {
+      animation: fade-in-up 0.3s both;
+    }
   }
 }
